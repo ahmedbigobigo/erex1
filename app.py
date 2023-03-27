@@ -20,7 +20,7 @@ def send_message(recipient_id, message):
         "recipient": {"id": recipient_id},
         "message": {"text": message},
     }
-    url = f"EABXQvM1lkVcBAHuOytrLZAgpNn2GW8cZBMw1PWww1JJQcdUfIEbr0RzPZCommZBMho1hA5m4OKFa1ShnNpiXcZBBNQDcqZBXyMZCMxP9lKYN01bqYlTC047mYiWJfX6znS33YbJ9eT7RLOhNoPDRZBmhsKRpMNw4KwtAftPZApGnA7V25qviFc4pHADnPN5oDqyQoRiC2AB5UwwZDZD"
+    url = f"https://graph.facebook.com/v12.0/me/messages?access_token={PAGE_ACCESS_TOKEN}"
     response = requests.post(url, json=data)
     if response.status_code != 200:
         print(f"Failed to send message: {response.text}")
